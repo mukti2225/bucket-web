@@ -4,51 +4,6 @@ import { ShieldCheck, Truck, Sparkles, Clock, Heart } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="border-t border-[#E8E1DC] bg-[#FDFBF7] text-[#24211F]">
-      {/* Top Value Assurance Banner */}
-      <div className="border-b border-[#E8E1DC]/80 bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-8 sm:grid-cols-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F6EF] text-[#315C4C]">
-              <Sparkles className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-[#24211F] sm:text-sm">Bunga Segar Pilihan</h4>
-              <p className="text-[11px] text-[#766F69]">Langsung dari petani lokal</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F6EF] text-[#315C4C]">
-              <Truck className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-[#24211F] sm:text-sm">Pengiriman Tepat Waktu</h4>
-              <p className="text-[11px] text-[#766F69]">Same-day & scheduled delivery</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F6EF] text-[#315C4C]">
-              <Clock className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-[#24211F] sm:text-sm">Custom Sesuai Hati</h4>
-              <p className="text-[11px] text-[#766F69]">Disesuaikan momen spesialmu</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F6EF] text-[#315C4C]">
-              <ShieldCheck className="h-5 w-5" />
-            </div>
-            <div>
-              <h4 className="text-xs font-semibold text-[#24211F] sm:text-sm">Pembayaran Aman</h4>
-              <p className="text-[11px] text-[#766F69]">100% terenkripsi & terpercaya</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
@@ -112,6 +67,11 @@ export default function Footer() {
                   Custom Bouquet Builder
                 </Link>
               </li>
+              <li>
+                <Link href="/gifts" className="hover:text-[#315C4C] transition-colors">
+                  Hadiah &amp; Pelengkap
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -122,28 +82,28 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-[#766F69]">
               <li>
-                <Link href="/products?occasion=ulang-tahun" className="hover:text-[#315C4C] transition-colors">
+                <Link href="/occasions/birthday" className="hover:text-[#315C4C] transition-colors">
                   Ulang Tahun
                 </Link>
               </li>
               <li>
-                <Link href="/products?occasion=anniversary" className="hover:text-[#315C4C] transition-colors">
+                <Link href="/occasions/anniversary" className="hover:text-[#315C4C] transition-colors">
                   Anniversary
                 </Link>
               </li>
               <li>
-                <Link href="/products?occasion=wisuda" className="hover:text-[#315C4C] transition-colors">
+                <Link href="/occasions/graduation" className="hover:text-[#315C4C] transition-colors">
                   Kelulusan / Wisuda
                 </Link>
               </li>
               <li>
-                <Link href="/products?occasion=valentine" className="hover:text-[#315C4C] transition-colors">
-                  Valentine Day
+                <Link href="/occasions/romantic" className="hover:text-[#315C4C] transition-colors">
+                  Romantis &amp; Kasih Sayang
                 </Link>
               </li>
               <li>
-                <Link href="/products?occasion=pernikahan" className="hover:text-[#315C4C] transition-colors">
-                  Pernikahan
+                <Link href="/occasions" className="hover:text-[#315C4C] transition-colors font-medium text-[#315C4C]">
+                  Semua Momen Spesial →
                 </Link>
               </li>
             </ul>
@@ -185,12 +145,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between border-t border-[#E8E1DC] pt-6 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-center border-t border-[#E8E1DC] pt-6 sm:flex-row">
           <p className="text-xs text-[#766F69]">
             © {new Date().getFullYear()} Florétta Florist & Gifting. Seluruh hak cipta dilindungi.
-          </p>
-          <p className="mt-2 text-xs text-[#766F69] sm:mt-0 flex items-center gap-1">
-            Dibuat dengan <Heart className="h-3 w-3 fill-[#C97878] text-[#C97878]" /> untuk setiap momen berharga Anda.
           </p>
         </div>
       </div>

@@ -182,10 +182,10 @@ Direction:
 
 ```text
 Heading:
-Elegant serif atau refined display font
+Playfair Display
 
 Body:
-Clean sans-serif
+Inter
 ```
 
 Jika belum ada keputusan brand final, prioritaskan readability dan performance.

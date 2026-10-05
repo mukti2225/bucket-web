@@ -111,3 +111,58 @@ export interface Order {
   qcPhotoTimestamp?: string;
   qcNote?: string;
 }
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  role: "CUSTOMER" | "ADMIN";
+  avatarUrl?: string;
+}
+
+export interface ImportantDate {
+  id: string;
+  title: string;
+  date: string; // YYYY-MM-DD or MM-DD
+  occasion: string;
+  recipientName: string;
+  recipientId?: string;
+  relationship?: string;
+}
+
+export interface Recipient {
+  id: string;
+  name: string;
+  phone: string;
+  relationship: string;
+  address: string;
+  city: string;
+  postalCode?: string;
+  notes?: string;
+  importantDates?: ImportantDate[];
+}
+
+export interface Address {
+  id: string;
+  label: string; // e.g. "Rumah", "Kantor", "Apartemen"
+  recipientName: string;
+  phone: string;
+  addressLine: string;
+  city: string;
+  postalCode: string;
+  isDefault: boolean;
+  notes?: string;
+}
+
+export interface ApiResponse<T> {
+  success: boolean;
+  data: T;
+  meta?: Record<string, unknown>;
+  error?: {
+    code: string;
+    message: string;
+    fields?: Record<string, string>;
+  };
+}
+

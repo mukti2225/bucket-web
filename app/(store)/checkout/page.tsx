@@ -27,6 +27,7 @@ import { formatCurrency } from "@/utils/currency";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { useCart } from "@/context/CartContext";
+import { useCheckoutStore } from "@/store/checkout.store";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -65,15 +66,31 @@ export default function CheckoutPage() {
     { id: "cc", name: "Kartu Kredit / Debit Online (Visa/Mastercard)", icon: CreditCard },
   ];
 
+  const { updateRecipient, updateDelivery, updateMessageCard, setPaymentMethod } = useCheckoutStore();
+
   const handleNextOrSubmit = () => {
     if (currentStep < 3) {
       setCurrentStep((prev) => (prev + 1) as any);
       window.scrollTo({ top: 120, behavior: "smooth" });
     } else {
       setIsProcessing(true);
+      updateRecipient({
+        name: recipientName,
+        phone: recipientPhone,
+        address: recipientAddress,
+      });
+      updateDelivery({
+        date: deliveryDate,
+        timeSlot: deliverySlot,
+      });
+      updateMessageCard({
+        content: giftMessage,
+      });
+      setPaymentMethod(selectedPayment);
+
       setTimeout(() => {
-        router.push("/track-order");
-      }, 1500);
+        router.push("/checkout/payment");
+      }, 600);
     }
   };
 
